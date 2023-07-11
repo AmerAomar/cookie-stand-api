@@ -1,37 +1,81 @@
-# api-quick-start
+# Lab Class 34
 
-Template Project for starting up CRUD API with Django Rest Framework
 
-## Customization Steps
+## project name: Cookie Stand API
 
-- DO NOT migrate yet
-- add additional dependencies as needed
-  - Re-export requirements.txt as needed
-- change `things` folder to the app name of your choice
-- Search through entire code base for `Thing`,`Things` and `things` to modify code to use your resource
-  - `project/settings.py`
-  - `project/urls.py`
-  - App's files
-    - `views.py`
-    - `urls.py`
-    - `admin.py`
-    - `serializers.py`
-    - `permissions.py`
-  - "Front" files
-    - if including a customer facing portion of the site then update/recreate:
-      - `urls_front.py`
-      - `views_front.py`
-      - template files
-      - Make sure to update project `urls.py` to add routes to the "front".
-- Update ThingModel with fields you need
-  - Make sure to update other modules that would be affected by Model customizations. E.g. serializers, tests, etc.
-- Rename `project/.env.sample` to `.env` and update as needed
-  - To generate secret key use `python3 -c "import secrets; print(secrets.token_urlsafe())"`
-- Run makemigrations and migrate commands when ready.
-- Run `python manage.py collectstatic`
-  - This repository includes static assets in repository. If you are using a Content Delivery Network then remove `staticfiles` from repository.
-- Optional: Update `api_tester.py`
+## Author: Amer Al-omari
 
-## Database
+## setup
 
-**NOTE:** If you are using Postgres instead of SQLite then make sure to install `psycopg2-binary` and include in `requirements.txt`
+```bash
+pip install -r requirements.txt
+```
+
+## How to run the app ?
+
+```bash
+python manage.py runserver
+```
+
+## How to run the test ?
+
+```bash
+python manage.py test
+```
+
+## how to Create Docker image ?
+
+```bash
+docker-compose up  # if the link from the compose did not  run, use this link: http://localhost:8000/api/v1/things
+```
+
+## You need the super user to login to the admin page
+
+`username`: admin
+`password`: admin
+
+## Routes
+
+### Token genration
+
+- Method: POST
+- Endpoint: /api/token/
+- Required token: No
+
+### Token refresh
+
+- Method: POST
+- Endpoint: /api/token/refresh/
+- Required token: Yes (refresh token)
+
+### CRUD Routes
+
+---
+
+- Method: GET
+- Endpoint: /api/v1/things/
+- Required token: Yes
+
+---
+
+- Method: POST
+- Endpoint: /api/v1/things/
+- Required token: Yes
+
+---
+
+- Method: GET
+- Endpoint: /api/v1/things/`<id>`/
+- Required token: Yes
+
+---
+
+- Method: PUT
+- Endpoint: /api/v1/things/`<id>`/
+- Required token: Yes
+
+---
+
+- Method: DELETE
+- Endpoint: /api/v1/things/`<id>`/
+- Required token: Yes
