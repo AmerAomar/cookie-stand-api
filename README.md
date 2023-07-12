@@ -26,7 +26,7 @@ python manage.py test
 ## how to Create Docker image ?
 
 ```bash
-docker-compose up  # if the link from the compose did not  run, use this link: http://localhost:8000/api/v1/things
+docker-compose up  # if the link from the compose did not  run, use this link: http://localhost:8000/api/v1/cookie
 ```
 
 ## You need the super user to login to the admin page
@@ -53,29 +53,30 @@ docker-compose up  # if the link from the compose did not  run, use this link: h
 ---
 
 - Method: GET
-- Endpoint: /api/v1/things/
+- Endpoint: /api/v1/cookie/
 - Required token: Yes
 
 ---
 
 - Method: POST
-- Endpoint: /api/v1/things/
+- Endpoint: /api/v1/cookie/
 - Required token: Yes
 
 ---
 
 - Method: GET
-- Endpoint: /api/v1/things/`<id>`/
+- Endpoint: /api/v1/cookie/`<id>`/
 - Required token: Yes
 
 ---
 
 - Method: PUT
-- Endpoint: /api/v1/things/`<id>`/
+- Endpoint: /api/v1/cookie/`<id>`/
 - Required token: Yes
 
 ---
 
 - Method: DELETE
-- Endpoint: /api/v1/things/`<id>`/
+- Endpoint: /api/v1/cookie/`<id>`/
 - Required token: Yes
+

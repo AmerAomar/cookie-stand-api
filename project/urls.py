@@ -33,7 +33,7 @@ urlpatterns = [
         jwt_views.TokenRefreshView.as_view(),
         name="token_refresh",
     ),
-    path("things/", include("cookie_stands.urls")),
+    path("cookie/", include("cookie_stands.urls")),
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
     path("about/", TemplateView.as_view(template_name="about.html"), name="about"),
     path("accounts/", include("accounts.urls")),
