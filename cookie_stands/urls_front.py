@@ -16,3 +16,6 @@ urlpatterns = [
     path("<int:pk>/update/", CookieStandUpdateView.as_view(), name="cookie_stand_update"),
     path("<int:pk>/delete/", CookieStandDeleteView.as_view(), name="cookie_stand_delete"),
 ]
+
+# u can add cookie by hitthing the full url in the browser or by using the form in the home page
+# http:// localhost:8000/cookie_stands/create/
